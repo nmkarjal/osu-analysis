@@ -1,0 +1,24 @@
+# Your credentials and settings
+.env
+config.toml
+
+# Your data and results
+data/
+osu_analysis/
+demo_output/
+*.osz
+
+# Anything else sitting in the root folder that isn't part of the project
+/*.txt
+_old_scripts/
+
+# Python and tools
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/

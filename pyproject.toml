@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "osu-coach"
+description = "Turns your osu! stats into weaknesses, map picks and practice plans"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+dependencies = ["numpy>=1.26", "pandas>=2.1", "scipy>=1.11", "matplotlib>=3.9"]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+osu-coach = "osu_coach.cli:main"
+
+[tool.setuptools]
+packages = ["osu_coach"]
+
+[tool.setuptools.dynamic]
+version = { attr = "osu_coach.__version__" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 160
+extend-exclude = ["_old_scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]
+ignore = ["E731", "B023", "B904", "B905"]

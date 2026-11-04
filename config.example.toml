@@ -1,0 +1,46 @@
+# Copy to config.toml, or let `python -m osu_coach setup` do it. config.toml is ignored by git.
+
+[player]
+user = ""                 # your username or id
+era_split = ""            # e.g. "2023-01-01" if you took a break. Plays before it count as "old". Empty = one year ago.
+
+[coach]
+session_minutes = 45
+sessions_per_week = 4
+
+[maps]
+per_role = 8              # maps per list in practice_maps.md
+min_ar = 7.5
+dt_min_ar = 6.0           # nomod AR for DT picks, 6 is about 8.3 with DT
+dt_max_bpm = 180          # nomod BPM cap for DT picks
+drill_max_length = 240    # focus maps longer than this many seconds score lower
+
+# Where maps come from. No genre, queries or artists = most favourited maps overall.
+[[maps.source]]
+name = "popular"
+
+# Genre ids: 2 video game, 3 anime, 4 rock, 5 pop, 9 hip hop, 10 electronic, 11 metal
+# [[maps.source]]
+# name = "rock"
+# genre = 4
+
+# [[maps.source]]
+# name = "my artists"
+# artists = ["Artist One", "Artist Two"]
+
+# Text search inside a genre. no_dt keeps these out of DT suggestions.
+# [[maps.source]]
+# name = "dnb"
+# genre = 10
+# queries = ["drum and bass", "jungle"]
+# no_dt = true
+
+# Compare map types by title (regex)
+[tags]
+"nightcore/sped-up" = "nightcore|sped up|speed up"
+
+# Maps to look up in the report. title and version narrow the search hits.
+# [[watch]]
+# query = "song name"
+# title = "part of the title"
+# version = "Expert"
