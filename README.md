@@ -101,6 +101,10 @@ pytest
 ruff check .
 ```
 
+## support
+
+if this helped you and you feel like it: https://ko-fi.com/neook
+
 ## license
 
 MIT
